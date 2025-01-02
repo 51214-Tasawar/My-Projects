@@ -23,6 +23,7 @@ const port = 3009 ;
 
 App.use( "/admin" , adminroute)
 App.use("/customer" , customerroute)
+App.use("/vendor" , vendorroute)
 App.listen(port , ()=>{
     console.log(`Testing Project At Port ${port}`)
 })
