@@ -3,7 +3,7 @@ errorHandler=(res , error)=>{
      res.send(
         {
             code : 400 ,
-            error :  error
+            error :  error.message
         }
      )
     }catch(error){
