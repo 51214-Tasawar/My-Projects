@@ -1,11 +1,15 @@
 const adminroute = require("./routes/adminroute")
 const customerroute = require("./routes/customerroute")
-const {} = require ("./routes/vendorroute")
+const vendorroute = require ("./routes/vendorroute")
+
 
 const express  = require("express")
+
 const {}  = require("body-parser");
 const bodyParser = require("body-parser");
-const customerroute = require("./routes/customerroute");
+
+
+
 
 
 const App = express();
