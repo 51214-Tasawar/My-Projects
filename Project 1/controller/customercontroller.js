@@ -1,8 +1,14 @@
 const {responseHandler} = require("../responseHandler")
-const {errorHandler} = require("../errorhandler")
+const errorHandler = require("../errorhandler")
 
-createCustomer = (req , res) =>{
+
+const {hash} = require("bcrypt")
+const {v4 : customerId} = require("uuid")
+
+createCustomer = async(req , res) =>{
   try{
+    req.body.customerId = customerId()
+    req.body.password = await hash(req.body.password , 10)
   return responseHandler(res , req.body)
   }catch(error){
     return errorHandler(res , error)

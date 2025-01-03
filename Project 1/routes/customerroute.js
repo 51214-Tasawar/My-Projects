@@ -15,7 +15,7 @@ const customerroute = require("express").Router() ;
 
 
 customerroute.get("/get_customer", getdeleteCustomer , getCustomer ) ;
-customerroute.post("/create_customer" , Createcustomer , createCustomer) ;
+customerroute.post("/create_customer" , Createcustomer ,createCustomer) ;
 customerroute.patch("/update_customer" , Updatecustomer , updateCustomer) ;
 customerroute.delete("/delete_customer" , getdeleteCustomer , deleteCustomer) ;
 
