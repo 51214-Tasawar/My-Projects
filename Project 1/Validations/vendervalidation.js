@@ -17,3 +17,38 @@ const Update = joi.object({
 const getdelete = joi.object({
     username : joi.string().min(8).max(50).required() 
 })
+
+module.exports = {
+    newVendor:async(req , res , next )=>{
+     try{
+      await Create.validateAsync(req.body)
+      next()
+     }catch(error){
+         res.send({
+            code : 400 ,
+            error : error.message
+         })
+     } 
+    } ,
+    updatenewVendor : async(req , res,next )=>{
+        try{
+            await Update.validateAsync(req.body)
+            next()
+        }catch(error){
+            res.send({
+                code : 400 ,
+                error : error.message
+            })
+        }
+    } ,
+    getdeletevendor:async( req , res , next )=>{
+        try{
+         await getdelete.validateAsync(req.query)
+        }catch(error){
+       res.send({
+        code : 400 ,
+        error : error.message
+       })
+        }
+    }
+}
