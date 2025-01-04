@@ -1,4 +1,6 @@
-const {DataTypes , Model, Sequelize} = require("sequelize") ;
+const mysequelize = require("../../dbconnection")
+
+const {DataTypes , Model} = require("sequelize") ;
 
 class adminTable extends Model { } ;
 
@@ -30,7 +32,8 @@ adminTable.init (
     
         name : "adminTable" ,
         timestamps : true  ,
-        paranoid : true
+        paranoid : true,
+        sequelize : mysequelize
 
     }
 )
