@@ -1,4 +1,4 @@
-const mysequelize = require("../../dbconnection")
+const sequelize = require("../../dbconnection")
 
 const { DataTypes , Model } = require("sequelize") ;
 
@@ -32,7 +32,7 @@ vendorTable.init (
         name : "vendorTable" ,
         timestamps : true ,
         paranoid : true, 
-        sequelize : mysequelize
+        sequelize : sequelize
     }
 )
 

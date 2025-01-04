@@ -1,7 +1,7 @@
 const adminroute = require("./routes/adminroute")
 const customerroute = require("./routes/customerroute")
 const vendorroute = require ("./routes/vendorroute")
-const {db} = require("./models/index")
+const { db } = require("./models/index")
 
 const express  = require("express")
 
@@ -25,7 +25,7 @@ App.use( "/admin" , adminroute)
 App.use("/customer" , customerroute)
 App.use("/vendor" , vendorroute)
 
-db.connection.sync({alter:true , logging : false}).then(()=>{
+db.connection.sync({alter:true }).then(()=>{
     console.log("Connected to the Database")
 }).catch(()=>{
     console.log("not Connected to the Database")

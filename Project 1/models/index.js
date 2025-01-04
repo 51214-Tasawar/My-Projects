@@ -1,14 +1,14 @@
-const mysequelize = require("../dbconnection")
+const sequelize = require("../dbconnection")
 
 const adminTable = require("./Tables/adminTable")
 const customerTable = require("./Tables/customerTable")
 const vendorTable = require("./Tables/vendorTable")
 
-const myModels = { adminTable , customerTable , vendorTable} ;
+const models = { adminTable , customerTable , vendorTable} ;
 
 const db = {}
 
-db.connection = mysequelize ;
-mysequelize.model = myModels ;
+db.connection = sequelize ;
+sequelize.models = models ;
 
-module.exports = { db , myModels }
+module.exports = { db , models }
