@@ -5,14 +5,14 @@ const  CreateValidAdmin = adminValidate.object({
 
     name : adminValidate.string().min(6).max(40).required() ,
     username : adminValidate.string().min(6).max(30).required(),
-    email : adminValidate.string().min(8).max(50).required(),
+    email : adminValidate.string().min(8).max(50).required().email(),
     password: adminValidate.string().min(8).max(1000)
 })
 
 const UpdateValidAdmin = adminValidate.object({
     name : adminValidate.string().min(6).max(40),
     username : adminValidate.string().min(6).max(30).required(),
-    email : adminValidate.string().min(8).max(50),
+    email : adminValidate.string().min(8).max(50).email(),
     password: adminValidate.string().min(8).max(1000)
 })
 
