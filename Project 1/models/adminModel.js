@@ -1,16 +1,29 @@
+const { response } = require("express");
 const {models} = require("./index") ;
 
 module.exports ={
-    CreateAdmin:(body)=>{
+    CreateAdmin:async(body)=>{
       try{
-    const newAdmin =models.adminTable.create({...body}) 
+    const newAdmin = await models.adminTable.create({...body}) 
     return{
-     reponse : newAdmin
+     response : newAdmin
     }
       }catch(error){
        return {
         error : error
        }
       }
+    },
+    GetAdmin :async()=>{
+        try{
+        const getadmin = await models.adminTable.findAll() ;
+        return{
+            response : getadmin
+        }
+        }catch(error){
+         return{
+            error : error
+         }
+        }
     }
 }
