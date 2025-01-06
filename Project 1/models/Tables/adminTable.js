@@ -30,7 +30,7 @@ adminTable.init (
     } ,
     {
     
-        name : "adminTable" ,
+        // name : "adminTable" ,
         timestamps : true  ,
         paranoid : true,
         sequelize : sequelize
