@@ -25,5 +25,35 @@ module.exports ={
             error : error
          }
         }
+    } , 
+    updateadmin :async({username , ...body})=>{
+        try{
+         const updateAdmin = await models.adminTable.update({
+            ...body
+         },{
+            where : {
+                username : username
+            }
+         })
+         return {
+            response : updateAdmin
+         }
+        }catch(error){
+         return{
+            error : error
+         }
+        }
+    } ,
+    deleteadmin :async({username})=>{
+        try{
+        const deleteAdmin = await models.adminTable.destroy({where : {username : username} })
+        return{
+            response : deleteAdmin
+        }
+        }catch(error){
+            return{
+               error : error
+            }
+        }
     }
 }
