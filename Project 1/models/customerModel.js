@@ -18,9 +18,16 @@ module.exports ={
       }
        }
     },
-    updatecust:({username , ...body})=>{
+    updatecust:async({username , ...body})=>{
         try{
-
+      const updatecust = await models.customerTable.update({
+        ...body
+      },{where :{
+        username : username
+      }})
+      return {
+        response : updatecust
+      }
         }
         catch(error){
             return{

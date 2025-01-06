@@ -28,10 +28,14 @@ getCustomer = (req , res) =>{
     }catch(error){
       return errorHandler(res , error)
     }
-  }
-  updateCustomer = (req , res) =>{
+  } ,
+  updateCustomer =async (req , res) =>{
     try{
-    return responseHandler(res , req.body)
+      const response = await updatecust(req.body)
+      if(response.error){
+        return errorHandler(res , response.error)
+      }
+    return responseHandler(res , response.response)
     }catch(error){
       return errorHandler(res , error)
     }
