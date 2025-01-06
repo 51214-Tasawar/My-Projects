@@ -29,7 +29,7 @@ vendorTable.init (
         }
     } ,
     {
-        name : "vendorTable" ,
+        // name : "vendorTable" ,
         timestamps : true ,
         paranoid : true, 
         sequelize : sequelize
