@@ -9,9 +9,13 @@ const {v4 : adminId } = require("uuid")
 module.exports =  {
     createAdmin :async(req , res)=>{
         try{
-            req.body.adminId = adminId()
+         req.body.adminId = adminId()
         req.body.password = await hash(req.body.password , 10)
-       return responseHandler(res , req.body)
+        const reponse = await CreateAdmin(req.body)
+       if(reponse.error){
+        return errorHandler(res, reponse.error)
+       }
+       return responseHandler(res, reponse.reponse)
         }catch(error){
          return errorHandler(res , error)
         }
