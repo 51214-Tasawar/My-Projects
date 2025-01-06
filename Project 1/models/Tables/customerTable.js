@@ -29,7 +29,7 @@ customerTable.init(
         }
     },
     {
-     name : "customerTable" ,
+    //  name : "customerTable" ,
      timestamps : true ,
      paranoid : true,
      sequelize : sequelize
