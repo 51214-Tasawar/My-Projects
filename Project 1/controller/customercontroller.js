@@ -22,9 +22,15 @@ createCustomer = async(req , res) =>{
     return errorHandler(res , error)
   }
 }
-getCustomer = (req , res) =>{
+getCustomer = async(req , res) =>{
     try{
-    return responseHandler(res , req.query)
+      
+      const response = await getallcust()
+      
+      if(response.error){
+        return errorHandler(res , response.error)
+      }
+    return responseHandler(res , response.response)
     }catch(error){
       return errorHandler(res , error)
     }

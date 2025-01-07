@@ -40,7 +40,6 @@ module.exports ={
          }
     } ,
    getdeleteCustomer:async(req , res , next )=>{
-      
     try {
         await getdelete.validateAsync(req.query)
         next()

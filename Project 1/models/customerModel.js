@@ -1,4 +1,4 @@
-const { response } = require("express");
+
 const {models} = require("./index") ;
 
 module.exports ={
@@ -35,9 +35,12 @@ module.exports ={
             }
              }
     } ,
-    getallcust :()=>{
+    getallcust :async()=>{
    try{
-
+    const getallcust = await models.customerTable.findAll()
+    return{
+        response : getallcust
+    }
    }catch(error){
       return{
         error : error
