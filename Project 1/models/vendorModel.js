@@ -13,9 +13,9 @@ module.exports = {
      }
      }
     },
-    updateVendor :()=>{
+    updateVendor :({username , ...body})=>{
      try{
-
+      const response = models.vendorTable.update({} ,{})
      }catch(error){
      return{
         error : error
