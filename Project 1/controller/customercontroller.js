@@ -46,9 +46,13 @@ getCustomer = async(req , res) =>{
       return errorHandler(res , error)
     }
   }
-  deleteCustomer = (req , res) =>{
+  deleteCustomer = async(req , res) =>{
     try{
-    return responseHandler(res , req.query)
+      const response = await deletecust(req.query)
+      if(response.error){
+        return errorHandler(res , response.error)
+      }
+    return responseHandler(res , response.response)
     }catch(error){
       return errorHandler(res , error)
     }

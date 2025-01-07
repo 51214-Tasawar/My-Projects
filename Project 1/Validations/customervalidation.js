@@ -12,7 +12,7 @@ const Update = joi.object({
     password : joi.string().min(8).max(1000)
 })
 const getdelete = joi.object({
-    username : joi.string().min(8).max(50).required
+    username : joi.string().min(8).max(50).required()
 })
 
 module.exports ={

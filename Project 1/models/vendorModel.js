@@ -1,0 +1,43 @@
+const {models} = require("../models/index");
+
+module.exports = {
+    createVendor :async(body)=>{
+     try{
+ const response = await models.vendorTable.create({...body})
+    return {
+        response : response
+    }
+     }catch(error){
+     return{
+        error : error
+     }
+     }
+    },
+    updateVendor :()=>{
+     try{
+
+     }catch(error){
+     return{
+        error : error
+     }
+     }
+    },
+    getVendor :()=>{
+       try{
+
+       }catch(error){
+     return{
+        error : error
+     }
+     }
+    } ,
+    deleteVendor:()=>{
+             try{
+
+             }catch(error){
+     return{
+        error : error
+     }
+     }
+    }
+}

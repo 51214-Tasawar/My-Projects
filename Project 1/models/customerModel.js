@@ -1,5 +1,7 @@
 
+const { where } = require("sequelize");
 const {models} = require("./index") ;
+const { response } = require("express");
 
 module.exports ={
     createcust:async(body)=>{
@@ -47,9 +49,13 @@ module.exports ={
       }
        }
     },
-    deletecust:()=>{
+    deletecust:async({username})=>{
    try{
+    const deletecust = await models.customerTable.destroy({where : {username : username}})
 
+    return {
+      response : deletecust
+    }
    }catch(error){
       return{
         error : error
