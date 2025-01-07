@@ -42,9 +42,9 @@ module.exports = {
       };
     }
   },
-  deleteVendor: ({username}) => {
+  deleteVendor:async({username}) => {
     try {
-        const response = models.vendorTable.destroy({where})
+        const response = await models.vendorTable.destroy({where:{username : username}})
         return {
             response : response
         }

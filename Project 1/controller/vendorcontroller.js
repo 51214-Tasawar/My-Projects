@@ -48,7 +48,7 @@ module.exports = {
   },
   deletevendor:async(req, res) => {
     try {
-      const response = await deleteVendor(req.body)
+      const response = await deleteVendor(req.query)
       if(response.error){
         return errorHandler(res, response.error);
       }
