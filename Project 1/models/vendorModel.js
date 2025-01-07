@@ -13,9 +13,14 @@ module.exports = {
      }
      }
     },
-    updateVendor :({username , ...body})=>{
+    updateVendor :async({username , ...body})=>{
      try{
-      const response = models.vendorTable.update({} ,{})
+      const response =await models.vendorTable.update({
+        ...body
+      } ,{where :{username : username}}) 
+      return {
+        response : response
+      }
      }catch(error){
      return{
         error : error

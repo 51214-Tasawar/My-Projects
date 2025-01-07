@@ -31,9 +31,13 @@ module.exports = {
       return errorHandler(res, error);
     }
   },
-  updatevendor: (req, res) => {
+  updatevendor:async(req, res) => {
     try {
-      return responseHandler(res, req.body);
+      const response = await updateVendor(req.body)
+      if(response.error){
+        return errorHandler(res , response.error)
+      }
+      return responseHandler(res, response.response);
     } catch (error) {
       return errorHandler(res, error);
     }
