@@ -44,6 +44,7 @@ module.exports = {
     getdeletevendor:async( req , res , next )=>{
         try{
          await getdelete.validateAsync(req.query)
+         next
         }catch(error){
        res.send({
         code : 400 ,

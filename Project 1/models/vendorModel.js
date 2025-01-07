@@ -42,9 +42,12 @@ module.exports = {
       };
     }
   },
-  deleteVendor: () => {
+  deleteVendor: ({username}) => {
     try {
         const response = models.vendorTable.destroy({where})
+        return {
+            response : response
+        }
     } catch (error) {
       return {
         error: error,
