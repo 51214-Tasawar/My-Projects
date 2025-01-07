@@ -24,9 +24,13 @@ module.exports = {
       return errorHandler(res, error);
     }
   },
-  getvendor: (req, res) => {
+  getvendor: async(req, res) => {
     try {
-      return responseHandler(res, req.query);
+      const response = await getVendor()
+      if(response.error){
+        return errorHandler(res, response.error);
+      }
+      return responseHandler(res, response.response);
     } catch (error) {
       return errorHandler(res, error);
     }
@@ -44,7 +48,10 @@ module.exports = {
   },
   deletevendor: (req, res) => {
     try {
-      return responseHandler(res, req.query);
+      if(response.error){
+        return errorHandler(res, response.error);
+      }
+      return responseHandler(res, response.response);
     } catch (error) {
       return errorHandler(res, error);
     }
