@@ -29,6 +29,7 @@ module.exports = {
     },
     getVendor :()=>{
        try{
+   const response = models.vendorTable.findAll()
 
        }catch(error){
      return{
