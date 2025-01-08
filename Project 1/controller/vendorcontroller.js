@@ -2,7 +2,7 @@ const { responseHandler } = require("../responseHandler");
 const errorHandler = require("../errorhandler");
 const {createVendor,
   updateVendor,
-  getVendor,
+ getallVendor ,
   deleteVendor
 } = require("../models/vendorModel")
 
@@ -26,7 +26,7 @@ module.exports = {
   },
   getvendor: async(req, res) => {
     try {
-      const response = await getVendor()
+      const response = await getallVendor()
       if(response.error){
         return errorHandler(res, response.error);
       }

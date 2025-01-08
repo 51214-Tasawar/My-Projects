@@ -30,7 +30,7 @@ module.exports = {
       };
     }
   },
-  getVendor: async () => {
+  getallVendor: async () => {
     try {
       const response = await models.vendorTable.findAll();
       return {
@@ -48,7 +48,7 @@ module.exports = {
         return {
             response : response
         }
-    } catch (error) {
+    }catch (error) {
       return {
         error: error,
       };
