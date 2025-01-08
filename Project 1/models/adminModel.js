@@ -16,7 +16,9 @@ module.exports ={
     },
     GetAdmin :async()=>{
         try{
-        const getadmin = await models.adminTable.findAll() ;
+        const getadmin = await models.adminTable.findAll({
+            attributes : ["name" , "username" , "email"]
+        }) ;
         return{
             response : getadmin
         }
