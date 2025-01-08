@@ -45,7 +45,7 @@ adminTable.beforeCreate(async(admin)=>{
     admin.password = await hash(admin.password, 10);
 })
 
-adminTable.afterCreate(()=>{
-    
+adminTable.afterCreate((admin)=>{
+     delete admin.dataValues.password ;
 })
 module.exports = adminTable ;
