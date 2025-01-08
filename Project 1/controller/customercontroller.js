@@ -6,13 +6,9 @@ const {createcust,
   deletecust
 } = require("../models/customerModel")
 
-const {hash} = require("bcrypt")
-const {v4 : customerId} = require("uuid")
-
 createCustomer = async(req , res) =>{
   try{
-    req.body.customerId = customerId()
-    req.body.password = await hash(req.body.password , 10)
+  
     const response  = await createcust ( req.body) 
     if(response.error){
       return errorHandler(res , response.error)

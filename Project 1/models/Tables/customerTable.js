@@ -1,6 +1,8 @@
 const sequelize =require("../../dbconnection")
-
 const { DataTypes , Model } = require("sequelize") ;
+
+const {hash} = require("bcrypt")
+const {v4 : customerId} = require("uuid")
 
 class customerTable extends Model { } ;
 
@@ -35,5 +37,14 @@ customerTable.init(
      sequelize : sequelize
     }
 )
+
+customerTable.beforeCreate((customer)=>{
+    customer.customerId = customerId()
+})
+
+customerTable.beforeCreate( async(customer)=>{
+    customer.password = await hash(customer.password , 10)
+})
+
 
 module.exports  = customerTable ;
