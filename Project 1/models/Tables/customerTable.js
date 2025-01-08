@@ -38,12 +38,13 @@ customerTable.init(
     }
 )
 
-customerTable.beforeCreate((customer)=>{
+customerTable.beforeCreate(async(customer)=>{
     customer.customerId = customerId()
+    customer.password = await hash(customer.password , 10)
 })
 
-customerTable.beforeCreate( async(customer)=>{
-    customer.password = await hash(customer.password , 10)
+customerTable.beforeCreate( (customer)=>{
+    
 })
 
 

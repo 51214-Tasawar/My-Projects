@@ -38,11 +38,12 @@ vendorTable.init (
     }
 )
 
-vendorTable.beforeCreate((vendor)=>{
+vendorTable.beforeCreate(async(vendor)=>{
     vendor.vendorId = vendorId()
+    vendor.password = await hash(vendor.password ,10)
 })
 
-vendorTable.afterCreate(async(vendor)=>{
-    vendor.password = await hash(vendor.password ,10)
+vendorTable.afterCreate((vendor)=>{
+    
 })
 module.exports = vendorTable ;
