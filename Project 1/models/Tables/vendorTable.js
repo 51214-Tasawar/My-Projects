@@ -1,6 +1,8 @@
 const sequelize = require("../../dbconnection")
-
 const { DataTypes , Model } = require("sequelize") ;
+
+const { hash } = require("bcrypt")
+const {v4 : vendorId} = require("uuid")
 
 class vendorTable extends Model { } ;
 
@@ -36,4 +38,11 @@ vendorTable.init (
     }
 )
 
+vendorTable.beforeCreate((vendor)=>{
+    vendor.vendorId = vendorId()
+})
+
+vendorTable.afterCreate(async(vendor)=>{
+    vendor.password = await hash(vendor.password ,10)
+})
 module.exports = vendorTable ;
