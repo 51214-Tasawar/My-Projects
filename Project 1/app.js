@@ -25,11 +25,12 @@ App.use( "/admin" , adminroute)
 App.use("/customer" , customerroute)
 App.use("/vendor" , vendorroute)
 
-db.connection.sync({alter:true }).then(()=>{
+db.connection.sync({alter:true , logging : false}).then(()=>{
     console.log("Connected to the Database")
 }).catch(()=>{
     console.log("not Connected to the Database")
 })
+
 App.listen(port , ()=>{
     console.log(`Testing Project At Port ${port}`)
 })

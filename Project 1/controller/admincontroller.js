@@ -6,14 +6,9 @@ const { CreateAdmin,
    deleteadmin
 } = require("../models/adminModel");
 
-const { hash } = require("bcrypt");
-const { v4: adminId } = require("uuid");
-
 module.exports = {
   createAdmin: async (req, res) => {
     try {
-      req.body.adminId = adminId();
-      req.body.password = await hash(req.body.password, 10);
       const response = await CreateAdmin(req.body);
 
       if (response.error) {

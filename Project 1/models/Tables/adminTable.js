@@ -1,6 +1,8 @@
 const sequelize = require("../../dbconnection")
-
 const {DataTypes , Model} = require("sequelize") ;
+
+const { hash } = require("bcrypt");
+const { v4: adminId } = require("uuid");
 
 class adminTable extends Model { } ;
 
@@ -37,5 +39,10 @@ adminTable.init (
 
     }
 )
+
+adminTable.beforeCreate(async(admin)=>{
+    admin.adminId = adminId();
+    admin.password = await hash(admin.password, 10);
+})
 
 module.exports = adminTable ;
