@@ -43,8 +43,8 @@ customerTable.beforeCreate(async(customer)=>{
     customer.password = await hash(customer.password , 10)
 })
 
-customerTable.beforeCreate( (customer)=>{
-    
+customerTable.afterCreate( (customer)=>{
+    delete customer.dataValues.password ;
 })
 
 

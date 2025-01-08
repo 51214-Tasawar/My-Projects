@@ -32,7 +32,9 @@ module.exports = {
   },
   getallVendor: async () => {
     try {
-      const response = await models.vendorTable.findAll();
+      const response = await models.vendorTable.findAll({
+        attributes : ["name", "username" , "email"]
+      });
       return {
         response: response,
       };
