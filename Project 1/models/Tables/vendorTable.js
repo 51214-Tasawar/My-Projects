@@ -44,6 +44,6 @@ vendorTable.beforeCreate(async(vendor)=>{
 })
 
 vendorTable.afterCreate((vendor)=>{
-    
+    delete vendor.dataValues.password
 })
 module.exports = vendorTable ;
