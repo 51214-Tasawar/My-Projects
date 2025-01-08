@@ -39,7 +39,9 @@ module.exports ={
     } ,
     getallcust :async()=>{
    try{
-    const getallcust = await models.customerTable.findAll()
+    const getallcust = await models.customerTable.findAll({
+      attributes :["name", "username" , "email"]
+    })
     return{
         response : getallcust
     }

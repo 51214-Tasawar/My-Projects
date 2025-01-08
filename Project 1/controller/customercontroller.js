@@ -21,7 +21,7 @@ createCustomer = async(req , res) =>{
 getCustomer = async(req , res) =>{
     try{
       
-      const response = await getallcust()
+      const response = await getallcust({})
       
       if(response.error){
         return errorHandler(res , response.error)
