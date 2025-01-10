@@ -17,5 +17,9 @@ productTable.init(
             type : DataTypes.STRING(1000),
             allowNull : false
         } ,
+        price : {
+            type : DataTypes.STRING(1000),
+            allowNull : false
+        }
 
     },{})
