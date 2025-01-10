@@ -22,4 +22,12 @@ productTable.init(
             allowNull : false
         }
 
-    },{})
+    },
+    {
+        name : "productTable",
+        timestamps : true ,
+        paranoid : true
+    }
+)
+
+module.exports = productTable ;
