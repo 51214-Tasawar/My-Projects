@@ -1,3 +1,5 @@
+const sequelize = require("../../dbconnection")
+
 const {Model , DataTypes } = require("sequelize") ;
 
 class productTable extends Model{ }
@@ -26,7 +28,8 @@ productTable.init(
     {
         name : "productTable",
         timestamps : true ,
-        paranoid : true
+        paranoid : true,
+        sequelize : sequelize
     }
 )
 
