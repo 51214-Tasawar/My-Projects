@@ -10,7 +10,7 @@ productTable.init(
             primaryKey : true  ,
             type : DataTypes.STRING(1000)
         },
-        name : {
+        productname : {
             unique : true ,
             type : DataTypes.STRING(100),
             allowNull : false
@@ -22,8 +22,11 @@ productTable.init(
         price : {
             type : DataTypes.STRING(1000),
             allowNull : false
-        }
-
+        } ,
+        Variations:{
+            type : DataTypes.STRING(1000),
+            allowNull : false
+        },
     },
     {
         name : "productTable",
