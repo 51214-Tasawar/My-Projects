@@ -1,6 +1,8 @@
 const sequelize = require("../../dbconnection")
 
 const {Model , DataTypes } = require("sequelize") ;
+const { v4:productId} = require("uuid");
+const { beforeCreate } = require("./vendorTable");
 
 class productTable extends Model{ }
 
@@ -23,5 +25,9 @@ productTable.init(
         sequelize : sequelize
     }
 )
+
+ productTable.beforeCreate(( product)=>{
+   product.productId =  productId()
+ })
 
 module.exports = productTable ;
