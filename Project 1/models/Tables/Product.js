@@ -13,8 +13,9 @@ productTable.init(
             type : DataTypes.STRING(100),
             allowNull : false
         } ,
-        Descryption : {
+        description  : {
             type : DataTypes.STRING(1000),
             allowNull : false
-        }
+        } ,
+
     },{})
