@@ -14,19 +14,7 @@ productTable.init(
             unique : true ,
             type : DataTypes.STRING(100),
             allowNull : false
-        } ,
-        description  : {
-            type : DataTypes.STRING(1000),
-            allowNull : false
-        } ,
-        price : {
-            type : DataTypes.STRING(1000),
-            allowNull : false
-        } ,
-        Variations:{
-            type : DataTypes.STRING(1000),
-            allowNull : false
-        },
+        } 
     },
     {
         name : "productTable",
