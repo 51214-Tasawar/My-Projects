@@ -9,6 +9,9 @@ attribute.init({
     type : DataTypes.STRING()
    },
    name : {
-    
+    type : DataTypes.STRING()
+   } ,
+   value : {
+    type : DataTypes.STRING()
    }
 },{})
