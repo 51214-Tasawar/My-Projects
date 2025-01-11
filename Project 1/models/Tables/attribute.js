@@ -14,4 +14,11 @@ attribute.init({
    value : {
     type : DataTypes.STRING()
    }
-},{})
+},{
+    name : "attribute" ,
+    timestamps : true ,
+    paranoid : true, 
+    sequelize : sequelize
+})
+
+module.exports = attribute ;
