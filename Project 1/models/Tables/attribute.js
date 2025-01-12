@@ -1,7 +1,7 @@
 const sequelize = require("../../dbconnection");
 
 const {DataTypes , Model} = require("sequelize");
-const {} = require("uuid")
+const {v4 : attributeId} = require("uuid")
 
 class attribute extends Model { }; 
 
@@ -24,7 +24,7 @@ attribute.init({
 })
 
 attribute.beforeCreate((attribute)=>{
-    attribute.attributeId
+    attribute.attributeId = attributeId()
 })
 
 module.exports = attribute ;
