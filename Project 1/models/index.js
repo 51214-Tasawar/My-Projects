@@ -5,6 +5,7 @@ const customerTable = require("./Tables/customerTable")
 const vendorTable = require("./Tables/vendorTable")
 const productTable = require("./Tables/Product")
 const ProductVariation = require("./Tables/productVariation")
+cons
 
 const models = { adminTable , customerTable , vendorTable , productTable , ProductVariation} ;
 
