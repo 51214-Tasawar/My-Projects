@@ -21,8 +21,8 @@ attribute.init({
     sequelize : sequelize
 })
 
-attribute.beforeCreate(()=>{
-    
+attribute.beforeCreate((attribute)=>{
+    attribute.attributeId
 })
 
 module.exports = attribute ;
