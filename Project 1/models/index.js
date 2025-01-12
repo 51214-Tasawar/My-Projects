@@ -7,7 +7,7 @@ const productTable = require("./Tables/Product")
 const ProductVariation = require("./Tables/productVariation")
 const attribute = require("./Tables/attribute")
 
-const models = { adminTable , customerTable , vendorTable , productTable , ProductVariation} ;
+const models = { adminTable , customerTable , vendorTable , productTable , ProductVariation , attribute} ;
 
 const db = {}
 
