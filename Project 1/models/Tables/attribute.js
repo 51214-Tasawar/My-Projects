@@ -1,5 +1,7 @@
-const {DataTypes , Model} = require("sequelize");
 const sequelize = require("../../dbconnection");
+
+const {DataTypes , Model} = require("sequelize");
+const {} = require("uuid")
 
 class attribute extends Model { }; 
 
